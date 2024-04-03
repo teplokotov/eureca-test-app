@@ -1,0 +1,30 @@
+.button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: var(--btn-color-default);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-color: var(--btn-color-hover);
+  }
+
+  &:active {
+    background-color: var(--btn-color-pressed);
+  }
+
+  &:disabled {
+    background-color: var(--btn-color-disabled);
+  }
+
+  &__add {
+    background-image: url(../control-button/images/add.svg);
+  }
+
+  &__trash {
+    background-image: url(../control-button/images/trash.svg);
+  }
+}

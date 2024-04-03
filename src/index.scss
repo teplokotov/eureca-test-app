@@ -3,11 +3,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --font-family: 'Roboto';
+  --font-color: #353D4B;
+  --font-weight: 500;
+  --btn-color-default: #4587ED;
+  --btn-color-hover: #3573D2;
+  --btn-color-pressed: #225CB5;
+  --btn-color-disabled: #ABC7F2;
 }
 
 body {
   background-color: #F1F2F4;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-style: normal;
 }
