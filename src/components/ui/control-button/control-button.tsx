@@ -9,6 +9,7 @@ type TProps = {
 function ControlButton({ type, onClick }: TProps) {
   return (
     <button
+      type='button'
       className={`${styles.button} ${styles[`button__${type}`]}`}
       onClick={(e) => onClick && onClick(e)}
     ></button>

@@ -5,11 +5,16 @@
   -moz-osx-font-smoothing: grayscale;
   --font-family: 'Roboto';
   --font-color: #353D4B;
+  --font-color-light: #ffffff;
+  --font-color-disabled: #ABC7F2;
+  --font-color-dark: #6D7885;
   --font-weight: 500;
   --btn-color-default: #4587ED;
   --btn-color-hover: #3573D2;
   --btn-color-pressed: #225CB5;
   --btn-color-disabled: #ABC7F2;
+  --bg-color-dark: #353D4B;
+  --bg-color-light: #E4E5E8;
 }
 
 body {

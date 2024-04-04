@@ -7,3 +7,5 @@ export const entrance = 'Подъезд';
 export const flat = 'Квартира';
 export const numberOfEntrance = 'Номер подъезда';
 export const numberOfFlat = 'Номер квартиры';
+
+export const addText = 'Добавить';

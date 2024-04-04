@@ -35,9 +35,6 @@ function Modal({ children, isHidden, coords, closeModal }: TProps) {
       <>
         <ModalOverlay onClose={closeModal} />
         <div className={styles.modal} style={coords}>
-          <section>
-            <button className={styles.button} onClick={closeModal}>x</button>
-          </section>
           {children}
         </div>
       </>,

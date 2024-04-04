@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Table from '../ui/table/table';
 import ControlButton from '../ui/control-button/control-button';
 import Modal from '../modal/modal';
+import Menu from '../menu/menu';
 
 export type TCoords = {
   left: number
@@ -50,7 +51,12 @@ function House({ id }: TProps) {
         isHidden={isHidden}
         coords={coords}
         closeModal={() => setIsHidden(true)}
-      >Test</Modal>
+      >
+        <Menu
+          houseId={id}
+          closeModal={() => setIsHidden(true)}
+        />
+      </Modal>
     </>
   )
 }
