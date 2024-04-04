@@ -1,12 +1,17 @@
+import { MouseEvent } from 'react';
 import styles from './control-button.module.scss';
 
 type TProps = {
-  type: 'add' | 'trash'
+  type: 'add' | 'trash';
+  onClick?: (e: MouseEvent) => void;
 }
 
-function ControlButton({ type }: TProps) {
+function ControlButton({ type, onClick }: TProps) {
   return (
-    <button className={`${styles.button} ${styles[`button__${type}`]}`}></button>
+    <button
+      className={`${styles.button} ${styles[`button__${type}`]}`}
+      onClick={(e) => onClick && onClick(e)}
+    ></button>
   )
 }
 
