@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
 import styles from './house.module.scss';
+import { house } from '../../constants';
+import React, { useState } from 'react';
 import Table from '../ui/table/table';
 import ControlButton from '../ui/control-button/control-button';
-import { house } from '../../constants';
-
 import Modal from '../modal/modal';
 
 export type TCoords = {
@@ -50,6 +49,7 @@ function House({ id }: TProps) {
       <Modal
         isHidden={isHidden}
         coords={coords}
+        closeModal={() => setIsHidden(true)}
       >Test</Modal>
     </>
   )
