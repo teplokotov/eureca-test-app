@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, createRef } from 'react';
 import styles from './control-button.module.scss';
 
 type TProps = {
@@ -7,11 +7,19 @@ type TProps = {
 }
 
 function ControlButton({ type, onClick }: TProps) {
+  const buttonRef = createRef<HTMLButtonElement>();
+
+  function handleOnClick(e: MouseEvent) {
+    onClick && onClick(e);
+    type === 'add' && buttonRef.current?.blur();
+  }
+
   return (
     <button
       type='button'
       className={`${styles.button} ${styles[`button__${type}`]}`}
-      onClick={(e) => onClick && onClick(e)}
+      onClick={handleOnClick}
+      ref={buttonRef}
     ></button>
   )
 }

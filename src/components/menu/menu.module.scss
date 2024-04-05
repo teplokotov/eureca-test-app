@@ -37,7 +37,7 @@
     border-bottom-right-radius: 12px;
   }
 
-  &__label {
+  &__span {
     font-family: var(--font-family);
     font-weight: var(--font-weight);
     color: var(--font-color-dark);
@@ -50,14 +50,20 @@
     border-radius: 6px;
     cursor: pointer;
     box-sizing: border-box;
+    border: 1px solid var(--bg-color-light);
 
     &:hover {
       color: var(--font-color);
     }
+
+    &_current {
+      box-shadow: 0px 0px 0px 1px black;
+    }
   }
 
-  &__input:checked + &__label {
+  &__input:checked + &__span {
     color: var(--font-color);
-    box-shadow:inset 0px 0px 0px 1px var(--btn-color-default);
+    // box-shadow:inset 0px 0px 0px 1px var(--btn-color-default);
+    border: 1px solid var(--btn-color-default);
   }
 }
