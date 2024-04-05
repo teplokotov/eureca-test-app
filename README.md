@@ -3,7 +3,7 @@
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![SCSS](https://img.shields.io/badge/SCSS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)](https://sass-lang.com/)
 
-[![image]()](https://teplokotov.github.io/eureca-test-app/)
+[![image](https://github.com/teplokotov/eureca-test-app/assets/118915923/d04e362f-6c45-4a5b-9beb-517a4953726d)](https://teplokotov.github.io/eureca-test-app/)
 
 🌐 [https://teplokotov.github.io/eureca-test-app/](https://teplokotov.github.io/eureca-test-app/)
 
