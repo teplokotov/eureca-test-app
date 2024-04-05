@@ -9,3 +9,4 @@ export const numberOfEntrance = 'Номер подъезда';
 export const numberOfFlat = 'Номер квартиры';
 
 export const addText = 'Добавить';
+export const noData = 'Нет данных';

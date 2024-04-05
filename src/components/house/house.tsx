@@ -1,7 +1,7 @@
 import styles from './house.module.scss';
 import { house } from '../../constants';
 import React, { useState } from 'react';
-import Table from '../ui/table/table';
+import Table, { TData } from '../ui/table/table';
 import ControlButton from '../ui/control-button/control-button';
 import Modal from '../modal/modal';
 import Menu from '../menu/menu';
@@ -18,6 +18,7 @@ type TProps = {
 function House({ id }: TProps) {
   const [coords, setCoords] = useState<TCoords>({ left: 0, top: 0 });
   const [isHidden, setIsHidden] = useState<boolean>(true);
+  const [dataTable, setDataTable] = useState<TData[]>([]);
 
   function updateCoords(button: HTMLElement) {
     const rect = button.getBoundingClientRect();
@@ -32,20 +33,27 @@ function House({ id }: TProps) {
     setIsHidden(!isHidden);
   }
 
+  function handleOnClickDelete() {
+    setDataTable([]);
+  }
+
   return (
     <>
       <section className={styles.house}>
         <div className={styles.house__header}>
           <h2 className={styles.house__heading}>{house} {id}</h2>
           <div className={styles.house__controls}>
-            <ControlButton type='trash' />
+            <ControlButton
+              type='trash'
+              onClick={handleOnClickDelete}
+            />
             <ControlButton
               type='add'
               onClick={(e) => handleOnClickAdd(e)}
             />
           </div>
         </div>
-        <Table />
+        <Table data={dataTable} />
       </section>
       <Modal
         isHidden={isHidden}
@@ -55,6 +63,8 @@ function House({ id }: TProps) {
         <Menu
           houseId={id}
           closeModal={() => setIsHidden(true)}
+          dataTable={dataTable}
+          setDataTable={setDataTable}
         />
       </Modal>
     </>

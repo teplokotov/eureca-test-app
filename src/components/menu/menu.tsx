@@ -3,13 +3,16 @@ import { addText, countOfEntrances, countOfFlats, entrance, flat, numberOfEntran
 import Button from '../ui/button/button';
 import CloseButton from '../ui/close-button/close-button';
 import styles from './menu.module.scss';
+import { TData } from '../ui/table/table';
 
 type TProps = {
   houseId: number;
   closeModal: () => void;
+  dataTable: TData[];
+  setDataTable: (data: TData[]) => void;
 }
 
-function Menu({ houseId, closeModal }: TProps) {
+function Menu({ houseId, closeModal, dataTable, setDataTable }: TProps) {
   const entrances = [...Array(countOfEntrances)];
   const flats = [...Array(countOfFlats)];
 
@@ -21,19 +24,24 @@ function Menu({ houseId, closeModal }: TProps) {
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
-    const formFlats: string[] = [];
+    const formFlats: number[] = [];
+    const formEntrances: number[] = [];
+
     for(const key in formJson) {
-      if(key.toString().includes('flat')) formFlats.push(formJson[key] as string);
+      if(key.toString().includes('entrance')) formEntrances.push(Number(formJson[key]));
+      if(key.toString().includes('flat')) formFlats.push(Number(formJson[key]));
     }
 
-    console.log({
-      houses: [{
-        id: houseId,
-        entrance: formJson.entrance,
+    setDataTable([
+      ...dataTable,
+      {
+        house: houseId,
+        entrance: formEntrances,
         flat: formFlats
-      }]
-    });
+      }
+    ])
 
+    closeModal();
   }
 
   return (
@@ -50,7 +58,7 @@ function Menu({ houseId, closeModal }: TProps) {
               return (
                 <li className={styles.menu__item} key={index} onClick={() => setIsFlatsHidden(false)}>
                   <label>
-                    <input className={styles.menu__input} type='radio' name='entrance' value={id} hidden/>
+                    <input className={styles.menu__input} type='checkbox' name={`entrance-${id}`} value={id} hidden/>
                     <span className={styles.menu__label}>{entrance} {id}</span>
                   </label>
                 </li>
